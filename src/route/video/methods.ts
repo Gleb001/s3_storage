@@ -117,7 +117,7 @@ async function POST(request: Request, response: Response) {
                 }
             );
 
-            return response.json({ link: `http://vision.com:3005/watch?v=${id_video}` }).end();
+            return response.json({ link: `http://${process.env.MAIN_SERVER_HOST}:${process.env.MAIN_SERVER_PORT}/watch?v=${id_video}` }).end();
 
         }
 
@@ -188,7 +188,7 @@ async function PUT(request: Request, response: Response) {
             }
         );
 
-        return response.json({ link: `http://vision.com:3005/watch?v=${videoId}` }).end();
+        return response.json({ link: `http://${process.env.MAIN_SERVER_HOST}:${process.env.MAIN_SERVER_PORT}/watch?v=${videoId}` }).end();
 
     } catch (error) {
         console.error('Ошибка при обновлении видео:', error);

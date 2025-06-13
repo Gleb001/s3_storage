@@ -109,7 +109,7 @@ async function POST(request: Request, response: Response) {
                 }
             );
 
-            return response.status(200).json({ url: `http://s3.vision.com:3002/photo?id=${id_photo}` });
+            return response.status(200).json({ url: `http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/photo?id=${id_photo}` });
 
         }
 
