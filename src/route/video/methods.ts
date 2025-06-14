@@ -91,6 +91,8 @@ async function GET(request: Request, response: Response) {
 }
 async function POST(request: Request, response: Response) {
 
+    console.log("Hello, world!");
+
     if (request.cookies.access_token) {
 
         const userData = jwt.decode(request.cookies.access_token);

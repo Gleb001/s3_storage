@@ -27,6 +27,11 @@ const { PORT, MODE, HOST } = process.env;
     APP.use(cors());
     APP.use(cookieParser());
     APP.use(express.json());
+    // @ts-ignore
+    APP.use((err, req, res, next) => {
+        console.error(err);
+        return next;
+    });
 
     APP.use("/video", videoRoute);
     APP.use("/photo", photoRoute);
